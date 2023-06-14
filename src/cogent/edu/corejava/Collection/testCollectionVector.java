@@ -3,11 +3,11 @@ package cogent.edu.corejava.Collection;
 import java.util.*;
 import java.util.LinkedList;
 
-public class testCollection {
+public class testCollectionVector {
 
 	public static void main(String[] args) {
 		
-		ArrayList<String> list = new ArrayList<String>();
+		Vector<String> list = new Vector<String>();
 		list.add("Chandra");
 		list.add("Names");
 		list.add("More Names");
@@ -55,7 +55,7 @@ public class testCollection {
 			System.out.println(p);
 			if(p.equals(Integer.toString(4)))
 			{
-				it.add("Hello");
+				it.remove();
 			}
 		}
 		System.out.println(list2); 
