@@ -17,8 +17,10 @@ public class testJDBC {
 		query = "create table if not exists employeeJava(id int primary key, name varchar(20), email varchar(50))";
 		stmt.executeUpdate(query);
 		Scanner sc = new Scanner(System.in);
+		query = "insert into employeejava values(?,?,?)";
+		PreparedStatement pstmt = con.prepareStatement(query);
 		int count = 0;
-		while(count <= 5) {
+		while(count < 2) {
 			
 			System.out.println("Enter ID:");
 			int id = sc.nextInt();
@@ -27,9 +29,16 @@ public class testJDBC {
 			String name = sc.nextLine();
 			System.out.println("Enter Email");
 			String email = sc.nextLine();
-			query = "insert into employeejava values("+ id +",'"+ name +"','"+ email +"')";
-			stmt.executeUpdate(query);
+//			query = "insert into employeejava values("+ id +",'"+ name +"','"+ email +"')";
+			
+			pstmt.setInt(1, id);
+			pstmt.setString(2, name);
+			pstmt.setString(3, email);
+			pstmt.executeUpdate();
 			count ++;
 		}
+		
+		
+		
 	}
 }

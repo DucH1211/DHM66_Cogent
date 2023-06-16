@@ -71,5 +71,4 @@ public class Employee implements Comparable<Employee>,Serializable  {
 		return "\n[empID:" + empid + ",\t Name:" + Name + ",\t age:"+ age + ",\t Gender:"+ Gender + ",\t Salary:" + salary +"]\n";
 	}
 
-
 }
